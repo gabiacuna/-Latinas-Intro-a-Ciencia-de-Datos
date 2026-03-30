@@ -13,5 +13,5 @@ wheels/
 .codex
 
 # Data
-.csv
-.zip
+*.csv
+*.zip
