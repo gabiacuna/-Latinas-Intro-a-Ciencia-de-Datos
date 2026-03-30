@@ -11,3 +11,7 @@ wheels/
 
 # My Agents
 .codex
+
+# Data
+.csv
+.zip

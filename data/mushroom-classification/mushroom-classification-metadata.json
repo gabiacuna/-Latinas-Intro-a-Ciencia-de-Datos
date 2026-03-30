@@ -1,0 +1,496 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataBiases": "cr:dataBiases",
+        "dataCollection": "cr:dataCollection",
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isEnumeration": "cr:isEnumeration",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "personalSensitiveInformation": "cr:personalSensitiveInformation",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform",
+        "wd": "https://www.wikidata.org/wiki/"
+    },
+    "alternateName": "Safe to eat or deadly poison?",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "license": {
+        "@type": "sc:CreativeWork",
+        "name": "CC0: Public Domain",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "distribution": [
+        {
+            "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/uciml/mushroom-classification?datasetVersionNumber=1",
+            "contentSize": "34.235 KB",
+            "md5": "kT7AGT8rYydKOR9YvnrY/w==",
+            "encodingFormat": "application/zip",
+            "@id": "archive.zip",
+            "@type": "cr:FileObject",
+            "name": "archive.zip",
+            "description": "Archive containing all the contents of the Mushroom Classification dataset"
+        },
+        {
+            "contentUrl": "mushrooms.csv",
+            "containedIn": {
+                "@id": "archive.zip"
+            },
+            "encodingFormat": "text/csv",
+            "@id": "mushrooms.csv_fileobject",
+            "@type": "cr:FileObject",
+            "name": "mushrooms.csv",
+            "description": "Attribute Information: (classes: edible=e, poisonous=p)\n\n- cap-shape: bell=b,conical=c,convex=x,flat=f, knobbed=k,sunken=s\n\n- cap-surface: fibrous=f,grooves=g,scaly=y,smooth=s \n\n- cap-color: brown=n,buff=b,cinnamon=c,gray=g,green=r,pink=p,purple=u,red=e,white=w,yellow=y\n\n- bruises: bruises=t,no=f\n\n- odor: almond=a,anise=l,creosote=c,fishy=y,foul=f,musty=m,none=n,pungent=p,spicy=s\n\n- gill-attachment: attached=a,descending=d,free=f,notched=n\n\n- gill-spacing: close=c,crowded=w,distant=d\n\n- gill-size: broad=b,narrow=n\n\n- gill-color: black=k,brown=n,buff=b,chocolate=h,gray=g, green=r,orange=o,pink=p,purple=u,red=e,white=w,yellow=y\n\n- stalk-shape: enlarging=e,tapering=t\n\n- stalk-root: bulbous=b,club=c,cup=u,equal=e,rhizomorphs=z,rooted=r,missing=?\n\n- stalk-surface-above-ring: fibrous=f,scaly=y,silky=k,smooth=s\n\n- stalk-surface-below-ring: fibrous=f,scaly=y,silky=k,smooth=s\n\n- stalk-color-above-ring: brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y\n\n- stalk-color-below-ring: brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y\n\n- veil-type: partial=p,universal=u\n\n- veil-color: brown=n,orange=o,white=w,yellow=y\n\n- ring-number: none=n,one=o,two=t\n\n- ring-type: cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=s,zone=z\n\n- spore-print-color: black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y\n\n- population: abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y\n\n- habitat: grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d"
+        }
+    ],
+    "recordSet": [
+        {
+            "field": [
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "class"
+                        }
+                    },
+                    "@id": "mushrooms.csv/class",
+                    "@type": "cr:Field",
+                    "name": "class",
+                    "description": "edible=e, poisonous=p"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "cap-shape"
+                        }
+                    },
+                    "@id": "mushrooms.csv/cap-shape",
+                    "@type": "cr:Field",
+                    "name": "cap-shape",
+                    "description": "bell=b,conical=c,convex=x,flat=f, knobbed=k,sunken=s"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "cap-surface"
+                        }
+                    },
+                    "@id": "mushrooms.csv/cap-surface",
+                    "@type": "cr:Field",
+                    "name": "cap-surface",
+                    "description": "fibrous=f,grooves=g,scaly=y,smooth=s"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "cap-color"
+                        }
+                    },
+                    "@id": "mushrooms.csv/cap-color",
+                    "@type": "cr:Field",
+                    "name": "cap-color",
+                    "description": "brown=n,buff=b,cinnamon=c,gray=g,green=r,pink=p,purple=u,red=e,white=w,yellow=y"
+                },
+                {
+                    "dataType": [
+                        "sc:Boolean"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "bruises"
+                        }
+                    },
+                    "@id": "mushrooms.csv/bruises",
+                    "@type": "cr:Field",
+                    "name": "bruises",
+                    "description": "bruises=t,no=f"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "odor"
+                        }
+                    },
+                    "@id": "mushrooms.csv/odor",
+                    "@type": "cr:Field",
+                    "name": "odor",
+                    "description": "almond=a,anise=l,creosote=c,fishy=y,foul=f,musty=m,none=n,pungent=p,spicy=s\n\n"
+                },
+                {
+                    "dataType": [
+                        "sc:Boolean"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "gill-attachment"
+                        }
+                    },
+                    "@id": "mushrooms.csv/gill-attachment",
+                    "@type": "cr:Field",
+                    "name": "gill-attachment",
+                    "description": "attached=a, descending=d, free=f, notched=n"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "gill-spacing"
+                        }
+                    },
+                    "@id": "mushrooms.csv/gill-spacing",
+                    "@type": "cr:Field",
+                    "name": "gill-spacing",
+                    "description": "close=c,crowded=w,distant=d"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "gill-size"
+                        }
+                    },
+                    "@id": "mushrooms.csv/gill-size",
+                    "@type": "cr:Field",
+                    "name": "gill-size",
+                    "description": "broad=b,narrow=n"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "gill-color"
+                        }
+                    },
+                    "@id": "mushrooms.csv/gill-color",
+                    "@type": "cr:Field",
+                    "name": "gill-color",
+                    "description": "black=k,brown=n,buff=b,chocolate=h,gray=g, green=r,orange=o,pink=p,purple=u,red=e,white=w,yellow=y"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "stalk-shape"
+                        }
+                    },
+                    "@id": "mushrooms.csv/stalk-shape",
+                    "@type": "cr:Field",
+                    "name": "stalk-shape",
+                    "description": "\n"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "stalk-root"
+                        }
+                    },
+                    "@id": "mushrooms.csv/stalk-root",
+                    "@type": "cr:Field",
+                    "name": "stalk-root"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "stalk-surface-above-ring"
+                        }
+                    },
+                    "@id": "mushrooms.csv/stalk-surface-above-ring",
+                    "@type": "cr:Field",
+                    "name": "stalk-surface-above-ring"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "stalk-surface-below-ring"
+                        }
+                    },
+                    "@id": "mushrooms.csv/stalk-surface-below-ring",
+                    "@type": "cr:Field",
+                    "name": "stalk-surface-below-ring"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "stalk-color-above-ring"
+                        }
+                    },
+                    "@id": "mushrooms.csv/stalk-color-above-ring",
+                    "@type": "cr:Field",
+                    "name": "stalk-color-above-ring"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "stalk-color-below-ring"
+                        }
+                    },
+                    "@id": "mushrooms.csv/stalk-color-below-ring",
+                    "@type": "cr:Field",
+                    "name": "stalk-color-below-ring"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "veil-type"
+                        }
+                    },
+                    "@id": "mushrooms.csv/veil-type",
+                    "@type": "cr:Field",
+                    "name": "veil-type"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "veil-color"
+                        }
+                    },
+                    "@id": "mushrooms.csv/veil-color",
+                    "@type": "cr:Field",
+                    "name": "veil-color"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "ring-number"
+                        }
+                    },
+                    "@id": "mushrooms.csv/ring-number",
+                    "@type": "cr:Field",
+                    "name": "ring-number"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "ring-type"
+                        }
+                    },
+                    "@id": "mushrooms.csv/ring-type",
+                    "@type": "cr:Field",
+                    "name": "ring-type"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "spore-print-color"
+                        }
+                    },
+                    "@id": "mushrooms.csv/spore-print-color",
+                    "@type": "cr:Field",
+                    "name": "spore-print-color"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "population"
+                        }
+                    },
+                    "@id": "mushrooms.csv/population",
+                    "@type": "cr:Field",
+                    "name": "population"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "mushrooms.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "habitat"
+                        }
+                    },
+                    "@id": "mushrooms.csv/habitat",
+                    "@type": "cr:Field",
+                    "name": "habitat"
+                }
+            ],
+            "@id": "mushrooms.csv",
+            "@type": "cr:RecordSet",
+            "name": "mushrooms.csv",
+            "description": "Attribute Information: (classes: edible=e, poisonous=p)\n\n- cap-shape: bell=b,conical=c,convex=x,flat=f, knobbed=k,sunken=s\n\n- cap-surface: fibrous=f,grooves=g,scaly=y,smooth=s \n\n- cap-color: brown=n,buff=b,cinnamon=c,gray=g,green=r,pink=p,purple=u,red=e,white=w,yellow=y\n\n- bruises: bruises=t,no=f\n\n- odor: almond=a,anise=l,creosote=c,fishy=y,foul=f,musty=m,none=n,pungent=p,spicy=s\n\n- gill-attachment: attached=a,descending=d,free=f,notched=n\n\n- gill-spacing: close=c,crowded=w,distant=d\n\n- gill-size: broad=b,narrow=n\n\n- gill-color: black=k,brown=n,buff=b,chocolate=h,gray=g, green=r,orange=o,pink=p,purple=u,red=e,white=w,yellow=y\n\n- stalk-shape: enlarging=e,tapering=t\n\n- stalk-root: bulbous=b,club=c,cup=u,equal=e,rhizomorphs=z,rooted=r,missing=?\n\n- stalk-surface-above-ring: fibrous=f,scaly=y,silky=k,smooth=s\n\n- stalk-surface-below-ring: fibrous=f,scaly=y,silky=k,smooth=s\n\n- stalk-color-above-ring: brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y\n\n- stalk-color-below-ring: brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y\n\n- veil-type: partial=p,universal=u\n\n- veil-color: brown=n,orange=o,white=w,yellow=y\n\n- ring-number: none=n,one=o,two=t\n\n- ring-type: cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=s,zone=z\n\n- spore-print-color: black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y\n\n- population: abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y\n\n- habitat: grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d"
+        }
+    ],
+    "version": 1,
+    "keywords": [
+        "subject \u003E earth and nature",
+        "subject \u003E earth and nature \u003E biology",
+        "subject \u003E people and society \u003E law \u003E government \u003E public safety"
+    ],
+    "isAccessibleForFree": true,
+    "includedInDataCatalog": {
+        "@type": "sc:DataCatalog",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com"
+    },
+    "creator": {
+        "@type": "sc:Organization",
+        "name": "UCI Machine Learning",
+        "url": "/organizations/uciml",
+        "image": "https://storage.googleapis.com/kaggle-organizations/7/thumbnail.png"
+    },
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com/organizations/kaggle",
+        "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+    },
+    "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/478/974/557711140aeab7ca242d1e903c4e058e/dataset-card.jpg",
+    "dateModified": "2016-12-01T23:08:00.073",
+    "datePublished": "2016-12-01T23:08:00.073",
+    "@type": "sc:Dataset",
+    "name": "Mushroom Classification",
+    "url": "https://www.kaggle.com/datasets/uciml/mushroom-classification/versions/1",
+    "description": "### Context\n\nAlthough this dataset was originally contributed to the UCI Machine Learning repository nearly 30 years ago, mushroom hunting (otherwise known as \u0022shrooming\u0022) is enjoying new peaks in popularity. Learn which features spell certain death and which are most palatable in this dataset of mushroom characteristics. And how certain can your model be?\n\n### Content \n\nThis dataset includes descriptions of hypothetical samples corresponding to 23 species of gilled mushrooms in the Agaricus and Lepiota Family Mushroom drawn from The Audubon Society Field Guide to North American Mushrooms (1981). Each species is identified as definitely edible, definitely poisonous, or of unknown edibility and not recommended. This latter class was combined with the poisonous one. The Guide clearly states that there is no simple rule for determining the edibility of a mushroom; no rule like \u0022leaflets three, let it be\u0027\u0027 for Poisonous Oak and Ivy.\n\n- **Time period**: Donated to UCI ML 27 April 1987\n\n### Inspiration\n\n- What types of machine learning models perform best on this dataset?\n\n- Which features are most indicative of a poisonous mushroom?\n\n### Acknowledgements\n\nThis dataset was originally donated to the UCI Machine Learning repository. You can learn more about past research using the data [here][1]. \n\n#[Start a new kernel][2]\n\n\n  [1]: https://archive.ics.uci.edu/ml/datasets/Mushroom\n  [2]: https://www.kaggle.com/uciml/mushroom-classification/kernels?modal=true"
+}
